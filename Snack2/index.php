@@ -15,27 +15,27 @@ $email = key_exists("email", $_GET) ? $_GET ["email"] : "";
 
 $age = key_exists("age", $_GET) ? $_GET ["age"] : "";
 
-$emailValida = "true";
+$emailValida = "false";
 
 $chiocciola = strstr($email, "@");
 
 $punto = strstr($email, ".");
 
-$nomeValido = "true";
+$nomeValido = "false";
 
-$etaValida = "true";
+$etaValida = "false";
 
 var_dump($_GET);
-if (!$chiocciola || !$punto){
-    $emailValida = "false";
+if ($chiocciola & $punto){
+    $emailValida = "true";
 };
 
-if (strlen($name) < 3 ){
-    $nomeValido = "false";
+if (strlen($name) > 3 ){
+    $nomeValido = "true";
 };
 
-if (!is_numeric($age) ){
-    $etaValida = "false";
+if (is_numeric($age) ){
+    $etaValida = "true";
 };
 
 
@@ -61,28 +61,28 @@ echo $etaValida;
     
     <div class="container">
 
-    <?php if(!$emailValida || !$nomeValido || !$etaValida) {?>
+    <?php if($emailValida || $nomeValido || $etaValida !== "true") {?>
 
-    <form class="row g-3">
+    <form>
   <div class="col-md-4">
     <label class="form-label">First name</label>
-    <input type="text" class="form-control <?php echo !$nomeValido ? 'is-invalid' : ''?>"  value="<?php echo $name ?>" required>
+    <input type="text" class="form-control <?php echo $nomeValido != "true" ? 'is-invalid' : ''?>" name="name"  value="<?php echo $name ?>" required>
     <div class="invalid-feedback">
-      Looks good!
+      Inserire un minimo di 3 caratteri
     </div>
   </div>
   <div class="col-md-4">
     <label class="form-label">Email</label>
-    <input type="text" class="form-control is-valid" value="<?php echo $email ?>" required>
+    <input type="text" class="form-control <?php echo $emailValida != "true" ? 'is-invalid' : ''?> " name="email" value="<?php echo $email ?>" required>
     <div class="invalid-feedback">
-      Looks good!
+      Controllare se corretto l'inserimento
     </div>
   </div>
   <div class="col-md-4">
     <label class="form-label">Età</label>
-    <input type="text" class="form-control is-valid" value="<?php echo $age ?>" required>
+    <input type="text" class="form-control <?php echo $etaValida != "true" ? 'is-invalid' : ''?>" name="age" value="<?php echo $age ?>" required>
     <div class="invalid-feedback">
-      
+      Inserire un numero
     </div>
   </div>
   <div class="col-12">
@@ -90,9 +90,6 @@ echo $etaValida;
   </div>
 </form>
 
-<?php } else { ?>
-    <div class="alert alert-success"> GRAZIE PER AVERVI SCELTO! </div>
-    </div>
 <?php } ?>
 </body>
 </html>
