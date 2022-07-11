@@ -14,50 +14,50 @@ Olimpia Milano - Cantù | 55-60
         [
             "squadraCasa" => "Olimpia",
             "squadraOspite" => "Milano",
-            "punteggioCasa" => "80",
-            "punteggioOspite" => "50",
+            "punteggioCasa" => rand(1, 150),
+            "punteggioOspite" => rand(1, 150),
         ],
         [
             "squadraCasa" => "Macedonia",
             "squadraOspite" => "Torino",
-            "punteggioCasa" => "40",
-            "punteggioOspite" => "58",
+            "punteggioCasa" => rand(1, 150),
+            "punteggioOspite" => rand(1, 150),
         ],
         [
             "squadraCasa" => "Verona",
             "squadraOspite" => "Rimini",
-            "punteggioCasa" => "90",
-            "punteggioOspite" => "36",
+            "punteggioCasa" => rand(1, 150),
+            "punteggioOspite" => rand(1, 150),
         ],
         [
             "squadraCasa" => "Creta",
             "squadraOspite" => "Danimarca",
-            "punteggioCasa" => "76",
-            "punteggioOspite" => "89",
+            "punteggioCasa" => rand(1, 150),
+            "punteggioOspite" => rand(1, 150),
         ],
         [
             "squadraCasa" => "Palermo",
             "squadraOspite" => "Toronto",
-            "punteggioCasa" => "35",
-            "punteggioOspite" => "67",
+            "punteggioCasa" => rand(1, 150),
+            "punteggioOspite" => rand(1, 150),
         ],
         [
             "squadraCasa" => "Venezia",
             "squadraOspite" => "Migonos",
-            "punteggioCasa" => "68",
-            "punteggioOspite" => "32",
+            "punteggioCasa" => rand(1, 150),
+            "punteggioOspite" => rand(1, 150),
         ],
         [
             "squadraCasa" => "Roma",
             "squadraOspite" => "Liverpool",
-            "punteggioCasa" => "20",
-            "punteggioOspite" => "28",
+            "punteggioCasa" => rand(1, 150),
+            "punteggioOspite" => rand(1, 150),
         ],
         [
             "squadraCasa" => "Pescara",
             "squadraOspite" => "Treviso",
-            "punteggioCasa" => "47",
-            "punteggioOspite" => "76",
+            "punteggioCasa" => rand(1, 150),
+            "punteggioOspite" => rand(1, 150),
         ],
     ];
     
@@ -107,7 +107,7 @@ Olimpia Milano - Cantù | 55-60
             <div class="card text-bg-warning mb-3" style="max-width: 20rem;">
                 <div class="card-header text-white text-center">MATCH</div>
                 <div class="card-body">
-                    <h5 class="card-title"><strong class="text-white"> SQUADRE : </strong><?php echo $squadraCorente["squadraCasa"] . " " . $squadraCorente["squadraOspite"] ?></h5>
+                    <h5 class="card-title"><strong class="text-white"> SQUADRE : </strong><?php echo $squadraCorente["squadraCasa"] . " - " . $squadraCorente["squadraOspite"] ?></h5>
                     <p class="card-text"><strong class="text-white"> PUNTEGGIO : </strong><?php echo $squadraCorente["punteggioCasa"]. " " . "|" . " " .$squadraCorente["punteggioOspite"] ?></p>
                 </div>
             </div>
